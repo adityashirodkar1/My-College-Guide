@@ -1,6 +1,5 @@
 // import logo from './logo.svg';
 // import './App.css';
-
 import Contact from "./components/Contact";
 import Schedule from "./components/Schedule";
 import Donation from "./components/Donation";
@@ -14,8 +13,6 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-
-
 
 function App() {
   return (
