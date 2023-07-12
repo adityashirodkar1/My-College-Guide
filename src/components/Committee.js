@@ -22,13 +22,13 @@ export default function Committee() {
                         <a href="/committee/sponsor"><button className='btn btn-warning' style={btn}>Sponsors</button></a>
                     </div>
                     <div style={{ alignSelf: "flex-start" }}>
-                        <a href="/committee/donation"><button className='btn btn-warning' style={btn}>Donation</button></a>
+                        <a href="/committee/team"><button className='btn btn-warning' style={btn}>Team</button></a>
                     </div>
                     <div>
-                        <a href=""><button style={committee}>Committee</button></a>
+                        <a href="/committee/desc"><button style={committee}>Committee</button></a>
                     </div>
                     <div style={{ alignSelf: "end" }}>
-                        <a href=""><button className='btn btn-warning' style={btn}>Events</button></a>
+                        <a href="/committee/desc"><button className='btn btn-warning' style={btn}>Events</button></a>
                     </div>
                     <div>
                         <a href="/committee/schedule"><button className='btn btn-warning' style={btn}>Schedule</button></a>

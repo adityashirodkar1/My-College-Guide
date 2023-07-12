@@ -9,13 +9,13 @@ import Navbar from "./components/Navbar";
 import Sponsors from "./components/Sponsors";
 import React from "react";
 import {
-  BrowserRouter as Router,
   Routes,
   Route,
   useLocation
 } from "react-router-dom";
 import EventRegister from "./components/EventRegister";
 import Committee from "./components/Committee";
+import Description from "./components/Description";
 
 function App() {
 
@@ -47,6 +47,7 @@ function App() {
           <Route path='/events' element={<Events/>} />
           <Route path='/eveReg' element={<EventRegister/>} />
           <Route path='/committee' element={<Committee/>} />
+          <Route path='/committee/desc' element={<Description/>} />
           <Route path='/committee/sponsor' element={<Sponsors/>} />
           <Route path='/committee/donation' element={<Donation/>} />
           <Route path='/committee/schedule' element={<Schedule/>} />
