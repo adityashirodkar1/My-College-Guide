@@ -11,16 +11,16 @@ export default function Footer() {
                             <div className="container d-flex align-items-center justify-content-center">
                                 <div className="row">
                                     <div className="col">
-                                        <i class="bi bi-instagram"></i>
+                                        <i className="bi bi-instagram"></i>
                                     </div>
                                     <div className="col">
-                                        <i class="bi bi-twitter"></i>
+                                        <i className="bi bi-twitter"></i>
                                     </div>
                                     <div className="col">
-                                        <i class="bi bi-linkedin"></i>
+                                        <i className="bi bi-linkedin"></i>
                                     </div>
                                     <div className="col">
-                                        <i class="bi bi-youtube"></i>
+                                        <i className="bi bi-youtube"></i>
                                     </div>
                                 </div>
                             </div>

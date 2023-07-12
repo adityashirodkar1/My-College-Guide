@@ -46,15 +46,15 @@ export default function Contact() {
           <div className="row">
             <div className="col">
               <h5 className='text-center'>Sakata Gintoki</h5>
-              <h6 className='text-center text-muted'><i class="bi bi-telephone"></i> +91 878292290</h6>
+              <h6 className='text-center text-muted'><i className="bi bi-telephone"></i> +91 878292290</h6>
             </div>
             <div className="col">
               <h5 className='text-center'>Ayanoukoji Kiyotaka</h5>
-              <h6 className='text-center text-muted'><i class="bi bi-telephone"></i> +91 9372282211</h6>
+              <h6 className='text-center text-muted'><i className="bi bi-telephone"></i> +91 9372282211</h6>
             </div>
             <div className="col">
               <h5 className='text-center'>Gojo Satoru</h5>
-              <h6 className='text-center text-muted'><i class="bi bi-telephone"></i> +91 7561912290</h6>
+              <h6 className='text-center text-muted'><i className="bi bi-telephone"></i> +91 7561912290</h6>
             </div>
           </div>
         </div>
@@ -62,14 +62,14 @@ export default function Contact() {
         <div className='mt-5'>
           <div className="row">
             <div className="col">
-              <h6 className='text-center text-muted'><i class="bi bi-envelope-at"></i> hahaXDRipBOZO@spit.ac.in</h6>
+              <h6 className='text-center text-muted'><i className="bi bi-envelope-at"></i> hahaXDRipBOZO@spit.ac.in</h6>
             </div>
           </div>
         </div>
 
-        <div className="mt-5 border border-1 rounded-2" style={{width: '550px', margin: 'auto'}}>
+        <div className="mt-5 mb-3 border border-1 rounded-2" style={{width: '550px', margin: 'auto'}}>
           <div className='text-center'>
-            <i class="bi bi-geo-alt-fill" style={{fontSize: '30px', color: 'blue'}}></i>
+            <i className="bi bi-geo-alt-fill" style={{fontSize: '30px', color: 'blue'}}></i>
           </div>
           <div className="row mt-2">
             <div className="col">

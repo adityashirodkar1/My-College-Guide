@@ -12,9 +12,17 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
+  useLocation
 } from "react-router-dom";
+import EventRegister from "./components/EventRegister";
+import Committee from "./components/Committee";
 
 function App() {
+
+  const paths = ['/', '/contact', '/events', 'eveReg'];
+  const location = useLocation();
+  const path = location.pathname;
+
   return (
     // <div className="App">
     //   <header className="App-header">
@@ -33,27 +41,18 @@ function App() {
     //   </header>
     // </div>
     <>
-    <Router>
-    <Navbar/>
-    <div className="container">
       <Routes>
-        <Route path='/sponsors' element={<Sponsors/>} />
+        <Route path='/' element = {paths.includes(path) ? <Navbar /> : null}>
+          <Route path='/contact' element={<Contact/>} />
+          <Route path='/events' element={<Events/>} />
+          <Route path='/eveReg' element={<EventRegister/>} />
+          <Route path='/committee' element={<Committee/>} />
+          <Route path='/committee/sponsor' element={<Sponsors/>} />
+          <Route path='/committee/donation' element={<Donation/>} />
+          <Route path='/committee/schedule' element={<Schedule/>} />
+        </Route>
       </Routes>
-      <Routes>
-        <Route path='/contact' element={<Contact/>} />
-      </Routes>
-      <Routes>
-        <Route path='/events' element={<Events/>} />
-      </Routes>
-      <Routes>
-        <Route path='/schedule' element={<Schedule/>} />
-      </Routes>
-      <Routes>
-        <Route path='/donation' element={<Donation/>} />
-      </Routes>
-    </div>
-    </Router>
-    <Footer/>
+      {paths.includes(path) ? <Footer /> : null}
     </>
   );
 }

@@ -1,8 +1,9 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link , Outlet } from 'react-router-dom'
 
 export default function Navbar() {
     return (
+        <>
         <div>
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
                 <div className="container-fluid">
@@ -16,16 +17,7 @@ export default function Navbar() {
                                 <Link className="nav-link active" aria-current="page" to="/events">Events</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to="/sponsors">Sponsors</Link>
-                            </li>
-                            <li className="nav-item">
                                 <Link className="nav-link" to="/contact">Contact</Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link className="nav-link" to="/schedule">Schedule</Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link className="nav-link" to="/donation">Donation</Link>
                             </li>
                             <li className="nav-item dropdown">
                                 <a className="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -47,5 +39,7 @@ export default function Navbar() {
                 </div>
             </nav>
         </div>
+        <Outlet />
+        </>
     )
 }
