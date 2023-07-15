@@ -1,5 +1,3 @@
-// import logo from './logo.svg';
-// import './App.css';
 import Contact from "./components/Contact";
 import Schedule from "./components/Schedule";
 import Donation from "./components/Donation";
@@ -42,15 +40,15 @@ function App() {
     // </div>
     <>
       <Routes>
-        <Route path='/' element = {paths.includes(path) ? <Navbar /> : null}>
-          <Route path='/contact' element={<Contact/>} />
-          <Route path='/events' element={<Events/>} />
-          <Route path='/eveReg' element={<EventRegister/>} />
-          <Route path='/committee' element={<Committee/>} />
-          <Route path='/committee/desc' element={<Description/>} />
-          <Route path='/committee/sponsor' element={<Sponsors/>} />
-          <Route path='/committee/donation' element={<Donation/>} />
-          <Route path='/committee/schedule' element={<Schedule/>} />
+        <Route path='/' element={paths.includes(path) ? <Navbar /> : null}>
+          <Route path='/contact' element={<Contact />} />
+          <Route path='/events' element={<Events />} />
+          <Route path='/eveReg/:id' element={<EventRegister />} />
+          <Route path='/committee/:id' element={<Committee />} />
+          <Route path='/committee/desc' element={<Description />} />
+          <Route path='/committee/sponsor' element={<Sponsors />} />
+          <Route path='/committee/donation' element={<Donation />} />
+          <Route path='/committee/schedule' element={<Schedule />} />
         </Route>
       </Routes>
       {paths.includes(path) ? <Footer /> : null}

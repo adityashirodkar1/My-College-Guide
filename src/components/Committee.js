@@ -1,6 +1,7 @@
-import React from 'react'
+import { React , useState , useEffect } from 'react'
+import { useParams } from 'react-router-dom'
 
-const committee = {
+const committeebtn = {
     background: 'none',
     border: 'none',
     fontFamily: 'Great Vibes',
@@ -14,6 +15,24 @@ const btn = {
 
 export default function Committee() {
 
+    const [committee , setCommittee] = useState({})
+    const id = useParams();
+    const fetchCommittee = async (props) => {
+        const response = await fetch(`http://localhost:5000/api/committees/${id.id}`, {
+          method: "GET", // *GET, POST, PUT, DELETE, etc.
+          mode: "cors",
+          headers: {
+            "Content-Type": "application/json",
+          }
+        });
+        const json = await response.json(); // parses JSON response into native JavaScript objects
+        setCommittee(json)
+    }
+
+    useEffect(() => {
+        fetchCommittee()
+    })
+
     return (
         <>
             <div style={{ height: "100%", display: "flex", justifyContent: "space-evenly", alignItems: "center" }}>
@@ -25,7 +44,7 @@ export default function Committee() {
                         <a href="/committee/team"><button className='btn btn-warning' style={btn}>Team</button></a>
                     </div>
                     <div>
-                        <a href="/committee/desc"><button style={committee}>Committee</button></a>
+                        <a href="/committee/desc"><button style={committeebtn}>{committee.name}</button></a>
                     </div>
                     <div style={{ alignSelf: "end" }}>
                         <a href="/committee/desc"><button className='btn btn-warning' style={btn}>Events</button></a>
