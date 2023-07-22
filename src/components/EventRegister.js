@@ -24,7 +24,6 @@ export default function EventRegister() {
       body: JSON.stringify(applicant), // body data type must match "Content-Type" header
     });
     const json = response.json(); // parses JSON response into native JavaScript objects
-    console.log(json)
   }
 
   return (

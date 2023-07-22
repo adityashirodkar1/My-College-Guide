@@ -45,10 +45,10 @@ function App() {
           <Route path='/events' element={<Events />} />
           <Route path='/eveReg/:id' element={<EventRegister />} />
           <Route path='/committee/:id' element={<Committee />} />
-          <Route path='/committee/desc' element={<Description />} />
-          <Route path='/committee/sponsor' element={<Sponsors />} />
+          {/* <Route path='/committee/sponsor' element={<Sponsors />} /> */}
           <Route path='/committee/donation' element={<Donation />} />
-          <Route path='/committee/schedule' element={<Schedule />} />
+          {/* <Route path='/committee/schedule' element={<Schedule />} /> */}
+          <Route path='/committee/events/:id' element={<Events />} />
         </Route>
       </Routes>
       {paths.includes(path) ? <Footer /> : null}

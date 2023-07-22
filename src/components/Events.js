@@ -1,11 +1,13 @@
 import { React, useEffect, useState } from 'react'
 import EventCard from './EventCard';
+import { useParams } from 'react-router-dom';
 
 export default function Events() {
   const [events, setEvents] = useState([])
-
+  const params = useParams();
+  
   const fetchEvents = async () => {
-    const response = await fetch('http://localhost:5000/api/events', {
+    const response = await fetch(params.id ? `http://localhost:5000/api/events/${params.id}` : 'http://localhost:5000/api/events', {
       method: "GET", // *GET, POST, PUT, DELETE, etc.
       mode: "cors",
       headers: {
@@ -14,7 +16,6 @@ export default function Events() {
     });
     const json = await response.json(); // parses JSON response into native JavaScript objects
     setEvents(json)
-    console.log(events)
   }
 
   useEffect(() => {

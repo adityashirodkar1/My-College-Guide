@@ -10,11 +10,11 @@ import { BrowserRouter as Router } from 'react-router-dom';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    {/* <EventState.Consumer> */}
+    {/* <EventState.Provider> */}
       <Router>
         <App />
       </Router>
-    {/* </EventState.Consumer> */}
+    {/* </EventState.Provider> */}
   </React.StrictMode>
 );
 

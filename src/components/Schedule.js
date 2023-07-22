@@ -1,12 +1,12 @@
-import React, { useContext } from 'react'
-//import eventContext from '../context/events/eventContext'
+import React from 'react'
 
 export default function Schedule(props) {
-  
   return (
-    <div>
-      <h2>Schedule here</h2>
-      <p></p>
-    </div>
+    <>
+      <div id='schedule'>
+        <h2>Schedule</h2>
+        <p>{props.com.name}</p>
+      </div>
+    </>
   )
 }

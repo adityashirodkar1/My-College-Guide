@@ -1,32 +1,56 @@
-import { React , useState , useEffect } from 'react'
+import { React, useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-
-const committeebtn = {
-    background: 'none',
-    border: 'none',
-    fontFamily: 'Great Vibes',
-    fontSize: '75px'
-}
-
-const btn = {
-    height: "65px",
-    width: "100px"
-}
+import Description from './Description'
+// import { useLocation } from "react-router-dom";
+import Schedule from './Schedule'
+import Sponsors from './Sponsors';
+import ComHeader from './ComHeader';
+import Team from './Team';
+import ComEvents from './ComEvents';
+import ComFooter from './ComFooter';
 
 export default function Committee() {
 
-    const [committee , setCommittee] = useState({})
+    // const location = useLocation();
+    // const path = location.pathname;
+
+    const [cp, setCp] = useState("initial")
+    const [vcp, setVcp] = useState([])
+    const [sec, setSec] = useState([])
+    const [hof, setHof] = useState([])
+    const [hom, setHom] = useState([])
+    const [prh, setPrh] = useState([])
+    const [th, setTh] = useState([])
+    const [oh, setOh] = useState([])
+    const [ch, setCh] = useState([])
+    const [hos, setHos] = useState([])
+    const [sub, setSub] = useState([])
+
+    const [events, setEvents] = useState(['ss','ss'])
+    const [committee, setCommittee] = useState({})
     const id = useParams();
-    const fetchCommittee = async (props) => {
+    const fetchCommittee = async () => {
         const response = await fetch(`http://localhost:5000/api/committees/${id.id}`, {
-          method: "GET", // *GET, POST, PUT, DELETE, etc.
-          mode: "cors",
-          headers: {
-            "Content-Type": "application/json",
-          }
+            method: "GET", // *GET, POST, PUT, DELETE, etc.
+            mode: "cors",
+            headers: {
+                "Content-Type": "application/json",
+            }
         });
         const json = await response.json(); // parses JSON response into native JavaScript objects
         setCommittee(json)
+        setEvents(json.eve)
+        setCp(json.team.chairperson)
+        setVcp(json.team.viceChairperson)
+        setSec(json.team.secretary)          
+        setHof(json.team.headOfFinance)  
+        setHom(json.team.headOfMarketing)  
+        setPrh(json.team.publicRelationHead)  
+        setTh(json.team.technicalHead)  
+        setOh(json.team.operationhead)  
+        setCh(json.team.creativeHead)  
+        setHos(json.team.headOfSubcom)  
+        setSub(json.team.subcom)  
     }
 
     useEffect(() => {
@@ -35,26 +59,20 @@ export default function Committee() {
 
     return (
         <>
-            <div style={{ height: "100%", display: "flex", justifyContent: "space-evenly", alignItems: "center" }}>
-                <div className='haha' style={{ height: "500px", width: "1000px", display: "flex", justifyContent: "space-evenly", alignItems: "center" }}>
-                    <div>
-                        <a href="/committee/sponsor"><button className='btn btn-warning' style={btn}>Sponsors</button></a>
-                    </div>
-                    <div style={{ alignSelf: "flex-start" }}>
-                        <a href="/committee/team"><button className='btn btn-warning' style={btn}>Team</button></a>
-                    </div>
-                    <div>
-                        <a href="/committee/desc"><button style={committeebtn}>{committee.name}</button></a>
-                    </div>
-                    <div style={{ alignSelf: "end" }}>
-                        <a href="/committee/desc"><button className='btn btn-warning' style={btn}>Events</button></a>
-                    </div>
-                    <div>
-                        <a href="/committee/schedule"><button className='btn btn-warning' style={btn}>Schedule</button></a>
-                    </div>
-                </div>
+            <div className="container mt-3">
+                <ComHeader com = {committee} />
+                <hr />
+                <Description com={committee} />
+                <hr />
+                <Schedule com={committee} />
+                <hr />
+                <ComEvents com = {committee} events = {events}/>
+                <hr />
+                <Sponsors com={committee} />
+                <hr />
+                <Team cp = {cp} vcp = {vcp} sec = {sec} hof = {hof} hom = {hom} prh = {prh} th = {th} oh = {oh} ch = {ch} hos = {hos} sub = {sub} />  
             </div>
-
+            <ComFooter />
         </>
     )
 }
