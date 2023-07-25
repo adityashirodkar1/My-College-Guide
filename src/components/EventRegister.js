@@ -4,10 +4,11 @@ import { useParams } from 'react-router-dom';
 export default function EventRegister() {
   const params = useParams();
   const eventId = params.id;
-  const [applicant, setApplicant] = useState({ name: "Hey", email: "yo", event: "is" });
+  const [applicant, setApplicant] = useState({});
 
   const handleOnChange = (event) => {
     setApplicant({ ...applicant, [event.target.name]: event.target.value })
+    console.log(applicant)
   }
 
   const addApplicant = async () => {

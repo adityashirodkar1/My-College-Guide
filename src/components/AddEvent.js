@@ -1,16 +1,44 @@
-import React from 'react'
+import { React, useState } from 'react'
 
 export default function AddEvent() {
+
+    const [newevent, setNewevent] = useState({});
+
+    const handleOnChange = (event) => {
+        setNewevent({ ...newevent, [event.target.name]: event.target.value })
+        console.log(newevent)
+    }
+
     return (
         <>
-            <h1>Add Event</h1>
+
             <div className='container'>
-                <label htmlFor="title">Event Name:</label>
-                <input type="text" name='title' id='title' onChange={handleOnChange} />
-                <label htmlFor="desc">Description:</label>
-                <textarea name="desc" id="desc" cols="30" rows="10" onChange={handleOnChange}></textarea>
-                <label htmlFor="event">Type:</label>
-                <button onClick={null}></button>
+                <h1 className="my-3">Add Event</h1>
+
+                <div className="mb-3">
+                    <label htmlFor="title" className="form-label">Event Name:</label>
+                    <input type="text" className="form-control" id="title" name="title" placeholder="Event" onChange={handleOnChange} />
+                </div>
+
+                <div className="mb-3">
+                    <label htmlFor="desc" className="form-label">Description:</label>
+                    <textarea className="form-control" id="desc" name="desc" rows="3" onChange={handleOnChange}></textarea>
+                </div>
+
+                <label htmlFor="type" className="form-label">Event Type:</label>
+                <select className="form-select" aria-label="Default select example" id='type' name='type' onChange={handleOnChange}>
+                    <option defaultValue>Select</option>
+                    <option value="Technical" name="Technical">Technical</option>
+                    <option value="Cultural" name="Cultural">Cultural</option>
+                    <option value="Non-technical" name="Non-technical">Non-technical</option>
+                </select>
+
+                <div className="mb-3">
+                    <label htmlFor="date" className="form-label">Date:</label>
+                    <input type="date" className="form-control" id="date" name="date" onChange={handleOnChange} />
+                </div>
+
+                <button className='btn btn-info' onClick={null}>Add</button>
             </div>
         </>
     )

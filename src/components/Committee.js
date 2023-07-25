@@ -26,7 +26,7 @@ export default function Committee() {
     const [hos, setHos] = useState([])
     const [sub, setSub] = useState([])
 
-    const [events, setEvents] = useState(['ss','ss'])
+    const [events, setEvents] = useState([])
     const [committee, setCommittee] = useState({})
     const id = useParams();
     const fetchCommittee = async () => {

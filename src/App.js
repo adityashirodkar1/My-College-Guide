@@ -1,10 +1,7 @@
 import Contact from "./components/Contact";
-import Schedule from "./components/Schedule";
-import Donation from "./components/Donation";
 import Events from "./components/Events";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
-import Sponsors from "./components/Sponsors";
 import React from "react";
 import {
   Routes,
@@ -13,7 +10,10 @@ import {
 } from "react-router-dom";
 import EventRegister from "./components/EventRegister";
 import Committee from "./components/Committee";
-import Description from "./components/Description";
+import Login from "./components/Login";
+import AddEvent from "./components/AddEvent";
+import AdminHome from "./components/AdminHome";
+import EditEvent from "./components/EditEvent";
 
 function App() {
 
@@ -44,11 +44,12 @@ function App() {
           <Route path='/contact' element={<Contact />} />
           <Route path='/events' element={<Events />} />
           <Route path='/eveReg/:id' element={<EventRegister />} />
-          <Route path='/committee/:id' element={<Committee />} />
-          {/* <Route path='/committee/sponsor' element={<Sponsors />} /> */}
-          <Route path='/committee/donation' element={<Donation />} />
-          {/* <Route path='/committee/schedule' element={<Schedule />} /> */}
+          <Route path='/committee/:id' element={<Committee />} />         
           <Route path='/committee/events/:id' element={<Events />} />
+          <Route path='/login/:com' element={<Login />} />
+          <Route path='/admin/event' element={<AddEvent />} />
+          <Route path='/admin/:id' element={<AdminHome />} />
+          <Route path='/admin/event/:id' element={<EditEvent />} />
         </Route>
       </Routes>
       {paths.includes(path) ? <Footer /> : null}
