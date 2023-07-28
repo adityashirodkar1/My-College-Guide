@@ -14,10 +14,11 @@ import Login from "./components/Login";
 import AddEvent from "./components/AddEvent";
 import AdminHome from "./components/AdminHome";
 import EditEvent from "./components/EditEvent";
+import SideBar from "./components/SideBar";
 
 function App() {
 
-  const paths = ['/', '/contact', '/events', 'eveReg'];
+  const paths = ['/','/home', '/contact', '/events', 'eveReg'];
   const location = useLocation();
   const path = location.pathname;
 
@@ -41,12 +42,13 @@ function App() {
     <>
       <Routes>
         <Route path='/' element={paths.includes(path) ? <Navbar /> : null}>
+          <Route path='/' element={<SideBar />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/events' element={<Events />} />
           <Route path='/eveReg/:id' element={<EventRegister />} />
           <Route path='/committee/:id' element={<Committee />} />         
-          <Route path='/committee/events/:id' element={<Events />} />
-          <Route path='/login/:com' element={<Login />} />
+          {/* <Route path='/committee/events/:id' element={<Events />} /> */}
+          <Route path='/login/:id' element={<Login />} />
           <Route path='/admin/event' element={<AddEvent />} />
           <Route path='/admin/:id' element={<AdminHome />} />
           <Route path='/admin/event/:id' element={<EditEvent />} />

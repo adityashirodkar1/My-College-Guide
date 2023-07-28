@@ -18,10 +18,12 @@ export default function EditEvent() {
             mode: "cors",
             headers: {
                 "Content-Type": "application/json",
+                "auth-token": localStorage.getItem('token')
             }
         });
         const json = await response.json(); // parses JSON response into native JavaScript objects
         setEve(json)
+        console.log(localStorage.token)
     }
 
     useEffect(() => {
@@ -35,16 +37,16 @@ export default function EditEvent() {
 
                     <div className="mb-3">
                         <label htmlFor="title" className="form-label">Event Name:</label>
-                        <input type="text" className="form-control" id="title" name="title" value={eve.title} onChange={handleOnChange} />
+                        <input style={{backgroundColor: "#1d1160", color:"white"}} type="text" className="form-control" id="title" name="title" value={eve.title} onChange={handleOnChange} />
                     </div>
 
                     <div className="mb-3">
                         <label htmlFor="desc" className="form-label">Description:</label>
-                        <textarea className="form-control" id="desc" name="description" rows="3" value={eve.description} onChange={handleOnChange}></textarea>
+                        <textarea style={{backgroundColor: "#1d1160", color:"white"}} className="form-control" id="desc" name="description" rows="3" value={eve.description} onChange={handleOnChange}></textarea>
                     </div>
 
                     <label htmlFor="type" className="form-label">Event Type:</label>
-                    <select className="form-select" aria-label="Default select example" id='type' name='type' onChange={handleOnChange}>
+                    <select style={{backgroundColor: "#1d1160", color:"white"}} className="form-select" aria-label="Default select example" id='type' name='type' onChange={handleOnChange}>
                         <option defaultValue>Select</option>
                         <option value="Technical" name="Technical">Technical</option>
                         <option value="Cultural" name="Cultural">Cultural</option>
@@ -53,7 +55,7 @@ export default function EditEvent() {
 
                     <div className="mb-3">
                         <label htmlFor="date" className="form-label">Date:</label>
-                        <input type="date" className="form-control" id="date" name="date" onChange={handleOnChange} />
+                        <input style={{backgroundColor: "#1d1160", color:"white"}} type="date" className="form-control" id="date" name="date" onChange={handleOnChange} />
                     </div>
 
                     <button className='btn btn-info' onClick={null}>Edit</button>

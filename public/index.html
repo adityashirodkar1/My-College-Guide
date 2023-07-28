@@ -20,6 +20,11 @@
         width: 50rem;
         height: 100px;
         transition: 0.4s ease-in-out;
+        background-color: #1d1160;
+        box-shadow: 10px 10px 10px black;
+        color: #e1debb;
+        /* #1d1160 */
+        /* #33006F */
       }
       .card-body {
         display: flex;
@@ -27,44 +32,39 @@
       }
       .card .content {
         visibility: hidden;
-        transition: 0.2s ease-in-out;
+        transition: 0.1s ease-in-out;
       }
       .card .link {
         visibility: hidden;
-        transition: 0.2s ease-in-out;
+        transition: 0.1s ease-in-out;
         align-self: end;
       }
       .card:hover {
         height: 300px;
       }
       .card:hover .content {
+        transition-delay: 0.2s;
         visibility: visible;
       }
       .card:hover .link {
+        transition-delay: 0.2s;
         visibility: visible;
       }
-    </style>
 
+      
+    </style>
+  
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css' rel='stylesheet' />
 
     <title>React App</title>
   </head>
-  <body>
+  <body style="background-color: black; color: beige;">
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div class="d-flex flex-column vh-100" id="root" style="width: 100%;"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/52587f4f3f.js" crossorigin="anonymous"></script>
-
   </body>
 </html>

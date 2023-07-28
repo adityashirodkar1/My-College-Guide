@@ -28,12 +28,6 @@ export default function Contact() {
 
   });
 
-  // useEffect(() => {
-  //   new mapboxgl.Marker()
-  //     .setLngLat([72.8361797672783, 19.12339045436202])
-  //     .addTo(map.current);
-  // })
-
   return (
     <>
       <div>
