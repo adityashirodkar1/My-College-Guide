@@ -10,9 +10,9 @@ const ahah = {
 
 export default function SideBar() {
 
-    const [committee, setCommittee] = useState({})
+    const [committee, setCommittee] = useState([])
 
-    const fetchEvent = async () => {
+    const fetchCommittee = async () => {
         const response = await fetch(`http://localhost:5000/api/committees`, {
             method: "GET", // *GET, POST, PUT, DELETE, etc.
             mode: "cors",
@@ -26,7 +26,7 @@ export default function SideBar() {
     }
 
     useEffect(() => {
-        fetchEvent()
+        fetchCommittee()
     },[])
 
 
@@ -50,17 +50,11 @@ export default function SideBar() {
                                     <a href="#submenu1" data-bs-toggle="collapse" className="nav-link px-0 align-middle">
                                         <i className="fs-4 bi-speedometer2"></i> <span className="ms-1 d-none d-sm-inline">Committees</span> </a>
                                     <ul className="collapse show nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
-
-
-                                        {/* {committee.map((com) => (
+                                        {committee.map((com) => (
                                             <li className="w-100">
-                                                <a href={`/`} className="nav-link px-0"> <span className="d-none d-sm-inline">{com.name}</span></a>
+                                                <a href={`/committee/${com.events[0]}`} className="nav-link px-0"> <span className="d-none d-sm-inline">{com.name}</span></a>
                                             </li>
-                                        ))} */}
-
-                                        <li>
-                                            <a href="/" className="nav-link px-0"> <span className="d-none d-sm-inline">CSI</span></a>
-                                        </li>
+                                        ))}
                                     </ul>
                                 </li>
                                 <li>
@@ -103,21 +97,6 @@ export default function SideBar() {
                                 </li>
                             </ul>
                             <hr />
-                            {/* <div className="dropdown">
-                                <a href="#" className="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <img src="https://res.cloudinary.com/dc4kfswj7/image/upload/v1690569442/1688991897718_csesv6.jpg" alt="hugenerd" width="50" height="50" className="rounded-circle" />
-                                    <span className="d-none d-sm-inline mx-1">HahaXD</span>
-                                </a>
-                                <ul className="dropdown-menu dropdown-menu-dark text-small shadow">
-                                    <li><a className="dropdown-item" href="#">New project...</a></li>
-                                    <li><a className="dropdown-item" href="#">Settings</a></li>
-                                    <li><a className="dropdown-item" href="#">Profile</a></li>
-                                    <li>
-                                        <hr className="dropdown-divider" />
-                                    </li>
-                                    <li><a className="dropdown-item" href="#">Sign out</a></li>
-                                </ul>
-                            </div> */}
                         </div>
                     </div>
                     <div className="col py-3" style={ahah}>

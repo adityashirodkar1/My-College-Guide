@@ -13,11 +13,11 @@ export default function ComHeader(props) {
   return (
     <>
         <div style={{ display: "flex", alignItems: "center", flexDirection: "row", justifyContent: "space-evenly"}}>
-            <div><AnchorLink href="#events"><button className='btn btn-primary mx-2'>Event</button></AnchorLink></div>
-            <div><AnchorLink href="#schedule"><button className='btn btn-primary mx-2'>Schedule</button></AnchorLink></div>
+            <div><AnchorLink href="#events"><button className='btn btn-danger mx-2'>Event</button></AnchorLink></div>
+            <div><AnchorLink href="#schedule"><button className='btn btn-danger mx-2'>Schedule</button></AnchorLink></div>
             <div><a href={`/login/${props.com._id}`}><img src={props.com.logo} alt="" style={{width: "400px"}}/></a></div>
-            <div><AnchorLink href="#sponsors"><button className='btn btn-primary mx-2'>Sponsor</button></AnchorLink></div>
-            <div><AnchorLink href="#team"><button className='btn btn-primary mx-2'>Team</button></AnchorLink></div>
+            <div><AnchorLink href="#sponsors"><button className='btn btn-danger mx-2'>Sponsor</button></AnchorLink></div>
+            <div><AnchorLink href="#team"><button className='btn btn-danger mx-2'>Team</button></AnchorLink></div>
         </div>
     </>
   )

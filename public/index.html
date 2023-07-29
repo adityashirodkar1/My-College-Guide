@@ -1,70 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik+Marker+Hatch&family=Great+Vibes">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
-    <style>
-      .card {
-        width: 50rem;
-        height: 100px;
-        transition: 0.4s ease-in-out;
-        background-color: #1d1160;
-        box-shadow: 10px 10px 10px black;
-        color: #e1debb;
-        /* #1d1160 */
-        /* #33006F */
-      }
-      .card-body {
-        display: flex;
-        flex-direction: column;
-      }
-      .card .content {
-        visibility: hidden;
-        transition: 0.1s ease-in-out;
-      }
-      .card .link {
-        visibility: hidden;
-        transition: 0.1s ease-in-out;
-        align-self: end;
-      }
-      .card:hover {
-        height: 300px;
-      }
-      .card:hover .content {
-        transition-delay: 0.2s;
-        visibility: visible;
-      }
-      .card:hover .link {
-        transition-delay: 0.2s;
-        visibility: visible;
-      }
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik+Marker+Hatch&family=Great+Vibes">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Web site created using create-react-app" />
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
-      
-    </style>
-  
-    <script src='https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js'></script>
-    <link href='https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css' rel='stylesheet' />
+  <style>
+    .card {
+      width: 50rem;
+      height: 100px;
+      transition: 0.4s ease-in-out;
+      background-color: #1d1160;
+      box-shadow: 10px 10px 10px black;
+      color: #e1debb;
+      /* #1d1160 */
+      /* #33006F */
+    }
 
-    <title>React App</title>
-  </head>
-  <body style="background-color: black; color: beige;">
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div class="d-flex flex-column vh-100" id="root" style="width: 100%;"></div>
+    .card-body {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card .content {
+      visibility: hidden;
+      transition: 0.1s ease-in-out;
+    }
+
+    .card .link {
+      visibility: hidden;
+      transition: 0.1s ease-in-out;
+      align-self: end;
+    }
+
+    .card:hover {
+      height: 300px;
+    }
+
+    .card:hover .content {
+      transition-delay: 0.2s;
+      visibility: visible;
+    }
+
+    .card:hover .link {
+      transition-delay: 0.2s;
+      visibility: visible;
+    }
+
+    .buttonhaha {
+      border: none;
+      padding: 20px 40px;
+      font-size: 44px;
+      position: relative;
+      background: transparent;
+      color: #F400A1;
+      text-transform: uppercase;
+      border: 3px solid #F400A1;
+      cursor: pointer;
+      transition: all 0.7s;
+      overflow: hidden;
+      border-radius: 100px;
+    }
+
+    .buttonhaha:hover {
+      color: #000;
+    }
+
+    span {
+      transition: all 0.7s;
+      z-index: -1;
+    }
+
+    .buttonhaha .first {
+      content: "";
+      position: absolute;
+      right: 100%;
+      top: 0;
+      width: 25%;
+      height: 100%;
+      background: #DC143C;
+    }
+
+    .buttonhaha:hover .first {
+      top: 0;
+      right: 0;
+    }
+
+    .buttonhaha .second {
+      content: "";
+      position: absolute;
+      left: 25%;
+      top: -100%;
+      height: 100%;
+      width: 25%;
+      background: #A50021;
+    }
+
+    .buttonhaha:hover .second {
+      top: 0;
+      left: 50%;
+    }
+
+    .buttonhaha .third {
+      content: "";
+      position: absolute;
+      left: 50%;
+      height: 100%;
+      top: 100%;
+      width: 25%;
+      background: #990000;
+    }
+
+    .buttonhaha:hover .third {
+      top: 0;
+      left: 25%;
+    }
+
+    .buttonhaha .fourth {
+      content: "";
+      position: absolute;
+      left: 100%;
+      top: 0;
+      height: 100%;
+      width: 25%;
+      background: #c8102E;
+    }
+
+    .buttonhaha:hover .fourth {
+      top: 0;
+      left: 0;
+    }
+
+    .regis {
+      background-image: linear-gradient(111.4deg, rgba(7, 7, 9, 1) 6.5%, rgba(27, 24, 113, 1) 93.2%);
+    }
+
+    .regis .container {
+      background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+    }
+
+    .login {
+      background-image: linear-gradient( 109.6deg,  rgba(15,2,2,1) 11.2%, rgba(36,163,190,1) 91.1% );
+    }
+
+    .login .container {
+      background-image: linear-gradient( 109.6deg,  rgba(24,138,141,1) 11.2%, rgba(96,221,142,1) 91.1% );
+    }
+  </style>
+
+  <script src='https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js'></script>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css' rel='stylesheet' />
+
+  <title>React App</title>
+</head>
+
+<body style="background-color: black; color: beige;">
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div class="d-flex flex-column vh-100" id="root" style="width: 100%;"></div>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script src="https://kit.fontawesome.com/52587f4f3f.js" crossorigin="anonymous"></script>
-  </body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/52587f4f3f.js" crossorigin="anonymous"></script>
+</body>
+
 </html>

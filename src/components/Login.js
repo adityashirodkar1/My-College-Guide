@@ -21,10 +21,10 @@ const style = {
     justifyContent: "space-evenly",
     alignItems: "center",
     height: "100%",
-    backgroundImage: `url("https://res.cloudinary.com/dc4kfswj7/image/upload/v1690570251/HahaXD/pang-yuhao-_kd5cxwZOK4-unsplash_1_m8vtl4.jpg")`,
-    backgroundRepeat: "no-repeat",
-    backgroundSize: "cover",
-    backgroundPosition: "center"
+    // backgroundImage: `url("https://res.cloudinary.com/dc4kfswj7/image/upload/v1690570251/HahaXD/pang-yuhao-_kd5cxwZOK4-unsplash_1_m8vtl4.jpg")`,
+    // backgroundRepeat: "no-repeat",
+    // backgroundSize: "cover",
+    // backgroundPosition: "center"
 }
 
 export default function Login() {
@@ -60,7 +60,7 @@ export default function Login() {
 
     return (
         <>
-            <div style={style}>
+            <div className='login' style={style}>
                 <form onSubmit={handleSubmit}>
                     <div className="container" style={box}>
                         <div className="head">
@@ -75,7 +75,7 @@ export default function Login() {
                             <label htmlFor="floatingPassword">Password</label>
                         </div>
                         <div className='my-4'>
-                            <button className='btn btn-info'>Login</button>
+                            <button className='btn btn-danger'>Login</button>
                         </div>
                     </div>
                 </form>
