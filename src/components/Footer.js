@@ -41,7 +41,7 @@ export default function Footer() {
                 </div>
                 <hr style={{marginInline: '10%'}} />
                 <div className="d-flex align-items-center justify-content-center">
-                    <span className="text-muted text-center">&copy; HahaXD 2023 | All Rights Reserved</span>
+                    <div className="text-muted text-center">&copy; HahaXD 2023 | All Rights Reserved</div>
                 </div>
             </footer>
         </>

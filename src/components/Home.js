@@ -3,11 +3,17 @@ import { React, useState, useEffect } from 'react'
 const style = {
     display: "flex",
     alignItems: "center",
+    width: "900px",
+    height: "100%",
     flexDirection: "column",
     justifyContent: "space-evenly",
-    height: "100%",
-    
+    // borderStyle: "solid", borderColor: "black", boxShadow: "20px 20px 15px black", padding: "50px",
     // flexWrap: "wrap",
+    // backgroundImage: `url("https://res.cloudinary.com/dc4kfswj7/image/upload/v1690651215/HahaXD/backdrop-background-blank-board_pmgatq.jpg")`,
+    // backgroundRepeat: "no-repeat",
+    // backgroundSize: "cover",
+    // backgroundPosition: "center",
+    // borderRadius: "20px"
 }
 
 const stylee = {
@@ -18,10 +24,7 @@ const stylee = {
     // flexWrap: "wrap",
 }
 
-const posterStyle = {
-    height: "900px",
-    width: "700px",
-}
+
 
 const Home = () => {
 
@@ -49,8 +52,19 @@ const Home = () => {
             <div style={stylee}>
                 <div className='container' style={style}>
                     {posters.map((poster) => (
-                        <div className='my-5' style={{ borderStyle: "solid", borderColor: "black", boxShadow: "20px 20px 50px 15px black" }}>
-                            <img className='' src={poster.img} alt="HahaXD" style={posterStyle} />
+                        <div className='poster my-5' style={{
+                            height: "900px",
+                            width: "700px",
+                            backgroundImage: `url(${poster.img})`,
+                            backgroundRepeat: "no-repeat",
+                            backgroundSize: "cover",
+                            backgroundPosition: "center",
+                            display: "flex",
+                            justifyContent: "center",
+                            flexDirection: "row",
+                            borderRadius: "20px 20px",
+                            boxShadow: "6px 6px 6px black"
+                        }}>
                         </div>
                     ))}
                 </div>

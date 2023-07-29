@@ -1,7 +1,8 @@
-import React from 'react'
+import { React , useState } from 'react'
 import { Link , Outlet } from 'react-router-dom'
 
 export default function Navbar() {
+
     return (
         <>
         <div>
@@ -31,10 +32,6 @@ export default function Navbar() {
                                 </ul>
                             </li>
                         </ul>
-                        <form className="d-flex">
-                            <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-                                <button className="btn btn-outline-success" type="submit">Search</button>
-                        </form>
                     </div>
                 </div>
             </nav>

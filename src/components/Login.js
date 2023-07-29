@@ -11,7 +11,8 @@ const box = {
     // filter: "opacity(30%)"
     // webkitBackdropFilter: "blur(10px)",
     // backdropFilter: "blur(10px)",
-    backgroundColor: "rgba(255, 255, 255, 0.5)"
+    backgroundColor: "rgba(255, 255, 255, 0.5)",
+    boxShadow: "10px 10px 10px black"
 }
 
 
@@ -67,15 +68,15 @@ export default function Login() {
                             <h3 style={{ textAlign: "center" }}>Admin Login</h3>
                         </div>
                         <div className="form-floating mb-3 my-5">
-                            <input style={{backgroundColor: "#F0F8FF"}} type="username" className="form-control" value={user.username} onChange={handleOnChange} id="floatingInput" placeholder="Username" name='username' />
+                            <input style={{ backgroundColor: "#F0F8FF", borderRadius: "10px", color: "#006400" }} type="username" className="form-control" value={user.username} onChange={handleOnChange} id="floatingInput" placeholder="Username" name='username' />
                             <label htmlFor="floatingInput">Username</label>
                         </div>
                         <div className="form-floating my-4">
-                            <input style={{backgroundColor: "#F0F8FF"}} type="password" className="form-control" value={user.password} onChange={handleOnChange} id="floatingPassword" placeholder="Password" name='password' />
+                            <input style={{ backgroundColor: "#F0F8FF", borderRadius: "10px", color: "#006400" }} type="password" className="form-control" value={user.password} onChange={handleOnChange} id="floatingPassword" placeholder="Password" name='password' />
                             <label htmlFor="floatingPassword">Password</label>
                         </div>
                         <div className='my-4'>
-                            <button className='btn btn-danger'>Login</button>
+                            <button className='btn btn-success' style={{boxShadow: "5px 5px 10px black"}}>Login</button>
                         </div>
                     </div>
                 </form>
